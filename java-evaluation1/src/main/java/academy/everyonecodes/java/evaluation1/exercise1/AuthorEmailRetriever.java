@@ -36,8 +36,8 @@ public class AuthorEmailRetriever {
         for (User user : users) {
             if (user.getComments() != null && user.getComments().size() != 0) {
                 for (Comment userComment : user.getComments()) {
-                    if (userComment == comment) {
-                        return Optional.of(user.getEmail());
+                    if (userComment.equals(comment)) {
+                        return Optional.ofNullable(user.getEmail());
                     }
                 }
             }
